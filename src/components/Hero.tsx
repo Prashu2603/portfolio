@@ -4,10 +4,11 @@ import { useTypingAnimation, useMagnetic, useMouseParallax } from '../hooks/useA
 import CyberIllustration from './CyberIllustration';
 
 const roles = [
-  'Future SOC Analyst',
+  'SOC Analyst Aspirant',
   'Cyber Security Enthusiast',
-  'AI & ML Learner',
-  'Splunk Learner',
+  'Splunk & SIEM Learner',
+  'Threat Detection Explorer',
+  'AI & Machine Learning Student',
 ];
 
 const easeOut = [0.25, 0.1, 0.25, 1] as const;
@@ -83,21 +84,22 @@ export default function Hero() {
               <span className="relative inline-flex rounded-full h-2 w-2 bg-neon-green" />
             </span>
             <span className="font-mono text-xs text-dark-300">
-              Available for opportunities
+              Available for Cyber Security Internships • 2027
             </span>
           </motion.div>
 
           {/* Title with parallax */}
           <motion.div style={{ x: mouse.x * 12, y: mouse.y * 12 }}>
-            <motion.h1
-              initial={{ opacity: 0, y: 24 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.7, delay: 0.5, ease: easeOut }}
-              className="font-display font-bold text-[2.75rem] sm:text-5xl md:text-6xl lg:text-7xl xl:text-[5.5rem] leading-[1.02] tracking-tight"
-            >
-              <span className="block text-dark-100">VELURI</span>
-              <span className="block gradient-text-animated neon-text">PRASANTH</span>
-            </motion.h1>
+         <motion.h1
+  initial={{ opacity: 0, y: 24 }}
+  animate={{ opacity: 1, y: 0 }}
+  transition={{ duration: 0.7, delay: 0.5, ease: easeOut }}
+  className="font-display font-black text-5xl sm:text-6xl md:text-7xl lg:text-8xl leading-tight"
+>
+  <span className="bg-gradient-to-r from-cyan-300 via-cyan-400 to-blue-500 bg-clip-text text-transparent drop-shadow-[0_0_45px_rgba(34,211,238,0.9)]">
+    Prasanth Veluri
+  </span>
+</motion.h1>
           </motion.div>
 
           {/* Typing subtitle */}
@@ -122,7 +124,7 @@ export default function Hero() {
             transition={{ duration: 0.5, delay: 0.85, ease: easeOut }}
             className="text-dark-300 text-sm md:text-base lg:text-lg leading-relaxed max-w-xl"
           >
-            B.Tech Information Technology student passionate about{' '}
+            Building a career in Cyber Security with a strong focus on SOC Operations, SIEM, Splunk, Threat Detection, and Incident Response. Passionate about securing modern systems, solving real-world security challenges, and continuously learning emerging technologies.{' '}
             <span className="text-cyber-300">Cyber Security</span>,{' '}
             <span className="text-cyber-300">AI & Machine Learning</span>, and{' '}
             <span className="text-cyber-300">SOC Operations</span>. Focused on SIEM,
@@ -141,34 +143,39 @@ export default function Hero() {
             </span>
             <span className="text-dark-700" aria-hidden="true">|</span>
             <span>Graduating 2027</span>
-            <span className="text-dark-700" aria-hidden="true">|</span>
-            <span>CGPA: 8.0</span>
+           
           </motion.div>
 
           {/* CTA buttons — magnetic */}
-          <motion.div
-            initial={{ opacity: 0, y: 16 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.5, delay: 1.05, ease: easeOut }}
-            className="flex flex-wrap items-center gap-3 md:gap-4"
-          >
-            <MagneticButton
-              variant="primary"
-              strength={0.35}
-              ariaLabel="Navigate to contact section"
-              onClick={() => document.querySelector('#contact')?.scrollIntoView({ behavior: 'smooth' })}
-            >
-              Let's Connect
-            </MagneticButton>
-            <MagneticButton
-              variant="glass"
-              strength={0.25}
-              ariaLabel="Navigate to projects section"
-              onClick={() => document.querySelector('#projects')?.scrollIntoView({ behavior: 'smooth' })}
-            >
-              View Projects
-            </MagneticButton>
-          </motion.div>
+         <motion.div
+  initial={{ opacity: 0, y: 16 }}
+  animate={{ opacity: 1, y: 0 }}
+  transition={{ duration: 0.5, delay: 1.05, ease: easeOut }}
+  className="flex flex-wrap items-center gap-3 md:gap-4"
+>
+  <MagneticButton
+    variant="primary"
+    strength={0.35}
+    ariaLabel="Navigate to contact section"
+    onClick={() =>
+      document.querySelector("#contact")?.scrollIntoView({
+        behavior: "smooth",
+      })
+    }
+  >
+    Hire Me
+  </MagneticButton>
+
+  <a
+    href="/resume/Veluri_Prasanth_Resume.pdf"
+    target="_blank"
+    rel="noopener noreferrer"
+  >
+    <button className="px-7 py-3.5 rounded-xl glass text-cyan-300 font-semibold border border-cyan-500/20 hover:bg-white/10 transition-all">
+      View Resume
+    </button>
+  </a>
+</motion.div>
 
           {/* Social icons */}
           <motion.div
@@ -180,7 +187,7 @@ export default function Hero() {
             {[
               { icon: Github, href: 'https://github.com/prashu2603', label: 'GitHub profile' },
               { icon: Linkedin, href: 'https://linkedin.com/in/prasanth-veluri', label: 'LinkedIn profile' },
-              { icon: Mail, href: 'mailto:veluriprasanth26212005@gmail.com', label: 'Send email' },
+              { icon: Mail, href: 'mailto:prasanthveluri03@gmail.com', label: 'Send email' },
             ].map((social) => (
               <motion.a
                 key={social.label}
@@ -190,7 +197,7 @@ export default function Hero() {
                 aria-label={social.label}
                 whileHover={{ scale: 1.12, y: -3 }}
                 whileTap={{ scale: 0.92 }}
-                className="w-10 h-10 rounded-xl glass flex items-center justify-center text-dark-300 hover:text-cyber-300 hover:border-cyber-500/30 transition-colors"
+                className="w-12 h-12 rounded-xl glass flex items-center justify-center text-dark-300 hover:text-cyber-300 hover:border-cyber-500/30 transition-colors"
               >
                 <social.icon className="w-5 h-5" aria-hidden="true" />
               </motion.a>
@@ -203,7 +210,7 @@ export default function Hero() {
           initial={{ opacity: 0, scale: 0.85 }}
           animate={{ opacity: 1, scale: 1 }}
           transition={{ duration: 0.9, delay: 0.3, ease: easeOut }}
-          className="relative h-[360px] sm:h-[420px] md:h-[500px] lg:h-[580px] xl:h-[620px] order-1 lg:order-2"
+         className="relative h-[420px] sm:h-[500px] md:h-[580px] lg:h-[680px] xl:h-[720px] order-1 lg:order-2"
         >
           <CyberIllustration />
         </motion.div>
@@ -217,7 +224,7 @@ export default function Hero() {
         className="absolute bottom-6 md:bottom-8 left-1/2 -translate-x-1/2 flex flex-col items-center gap-2"
         aria-hidden="true"
       >
-        <span className="font-mono text-[10px] md:text-xs text-dark-500 tracking-widest">SCROLL</span>
+        <span className="font-mono text-[10px] md:text-xs text-dark-500 tracking-widest">EXPLORE</span>
         <motion.div
           animate={{ y: [0, 8, 0] }}
           transition={{ duration: 1.5, repeat: Infinity }}

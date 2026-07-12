@@ -14,7 +14,7 @@ const links = [
 const socials = [
   { icon: Github, href: 'https://github.com/prashu2603', label: 'GitHub' },
   { icon: Linkedin, href: 'https://linkedin.com/in/prasanth-veluri', label: 'LinkedIn' },
-  { icon: Mail, href: 'mailto:veluriprasanth26212005@gmail.com', label: 'Email' },
+  { icon: Mail, href: 'mailto:prasanthveluri03@gmail.com', label: 'Email' },
 ];
 
 export default function Footer() {

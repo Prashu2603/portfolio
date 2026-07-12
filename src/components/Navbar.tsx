@@ -9,7 +9,7 @@ const navItems = [
   { label: 'Skills', href: '#skills' },
   { label: 'Experience', href: '#experience' },
   { label: 'Certs', href: '#certifications' },
-  { label: 'Projects', href: '#projects' },
+  { label: 'Journey', href: '#experience' },
   { label: 'Contact', href: '#contact' },
 ];
 
@@ -51,24 +51,29 @@ export default function Navbar() {
         transition={{ duration: 0.6, delay: 0.3, ease: [0.25, 0.1, 0.25, 1] }}
         aria-label="Main navigation"
         className={`fixed top-4 left-1/2 -translate-x-1/2 z-50 transition-all duration-500 ${
-          scrolled ? 'w-[92%] max-w-3xl' : 'w-[92%] max-w-4xl'
+          scrolled ? 'w-[94%] max-w-5xl' : 'w-[96%] max-w-6xl'
         }`}
       >
-        <div className="glass-strong rounded-2xl px-4 md:px-6 py-3 flex items-center justify-between neon-border shadow-glass-lg">
+        <div className="glass-strong backdrop-blur-2xl rounded-2xl border border-cyan-500/20 px-4 md:px-6 py-3 flex items-center justify-between neon-border shadow-glass-lg">
           {/* Logo */}
           <button
             onClick={() => handleClick('#home')}
             aria-label="Go to home"
             className="flex items-center gap-2 group"
           >
-            <div className="relative w-9 h-9 rounded-lg glass flex items-center justify-center group-hover:scale-110 transition-transform duration-300">
-              <Shield className="w-5 h-5 text-cyber-400" aria-hidden="true" />
+            <div className="relative w-11 h-11 rounded-xl glass flex items-center justify-center group-hover:scale-110 transition-all duration-300">
+              <Shield
+  className="w-6 h-6 text-cyan-300 drop-shadow-[0_0_35px_rgba(34,211,238,1)]"
+  strokeWidth={1.8}
+/>
               <div className="absolute inset-0 rounded-lg bg-cyber-500/20 blur-md opacity-0 group-hover:opacity-100 transition-opacity" />
             </div>
-            <span className="font-display font-bold text-sm tracking-wider hidden sm:block">
-              <span className="text-dark-100">VELURI</span>{' '}
-              <span className="gradient-text">PRASANTH</span>
-            </span>
+            <span className="font-display font-extrabold text-base tracking-wide hidden sm:block">
+  <span className="text-white">Prasanth</span>{' '}
+  <span className="bg-gradient-to-r from-cyan-300 via-cyan-400 to-blue-500 bg-clip-text text-transparent">
+    Veluri
+  </span>
+</span>
           </button>
 
           {/* Desktop nav */}
@@ -102,7 +107,7 @@ export default function Navbar() {
             onMouseLeave={ctaMagnetic.handleMouseLeave}
             onClick={() => handleClick('#contact')}
             style={{ transition: 'transform 0.25s cubic-bezier(0.34, 1.56, 0.64, 1)' }}
-            className="hidden md:flex items-center gap-2 px-4 py-1.5 rounded-lg bg-gradient-to-r from-cyber-500 to-blue-500 text-white text-sm font-semibold hover:shadow-[0_0_20px_rgba(34,211,238,0.4)] transition-shadow"
+            className="hidden md:flex items-center gap-2 px-5 py-2 rounded-xl bg-gradient-to-r from-cyan-500 via-cyan-400 to-blue-500 text-white text-sm font-semibold shadow-[0_0_30px_rgba(34,211,238,0.25)] hover:scale-105 hover:shadow-[0_0_40px_rgba(34,211,238,0.45)] transition-all duration-300"
           >
             Get in Touch
           </button>
@@ -129,7 +134,7 @@ export default function Navbar() {
             transition={{ duration: 0.25 }}
             className="fixed top-20 left-1/2 -translate-x-1/2 z-50 w-[90%] max-w-sm md:hidden"
           >
-            <div className="glass-strong rounded-2xl p-4 neon-border shadow-glass-lg">
+            <div className="glass-strong backdrop-blur-2xl rounded-2xl border border-cyan-500/20 p-4 neon-border shadow-glass-lg">
               {navItems.map((item, i) => {
                 const isActive = activeSection === item.href.slice(1);
                 return (
@@ -143,7 +148,7 @@ export default function Navbar() {
                     className={`w-full text-left px-4 py-3 rounded-xl text-sm font-medium transition-colors ${
                       isActive
                         ? 'bg-cyber-500/10 text-cyber-300 border border-cyber-500/20'
-                        : 'text-dark-300 hover:text-cyber-300 hover:bg-white/5'
+                        : 'text-slate-300 hover:text-cyan-300 hover:bg-white/5'
                     }`}
                   >
                     {item.label}

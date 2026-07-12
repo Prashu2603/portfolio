@@ -19,8 +19,8 @@ const contactInfo = [
   {
     icon: Mail,
     label: 'Email',
-    value: 'veluriprasanth26212005@gmail.com',
-    href: 'mailto:veluriprasanth26212005@gmail.com',
+    value: 'prasanthveluri03@gmail.com',
+    href: 'mailto:prasanthveluri03@gmail.com',
     color: 'text-cyber-400',
     bgColor: 'bg-cyber-500/10',
     borderColor: 'border-cyber-500/25',
@@ -48,7 +48,7 @@ const contactInfo = [
 const socials = [
   { icon: Github, href: 'https://github.com/prashu2603', label: 'GitHub', color: 'hover:text-cyber-400' },
   { icon: Linkedin, href: 'https://linkedin.com/in/prasanth-veluri', label: 'LinkedIn', color: 'hover:text-blue-400' },
-  { icon: Mail, href: 'mailto:veluriprasanth26212005@gmail.com', label: 'Email', color: 'hover:text-neon-green' },
+  { icon: Mail, href: 'mailto:prasanthveluri03@gmail.com', label: 'Email', color: 'hover:text-neon-green' },
 ];
 
 export default function Contact() {
@@ -62,7 +62,7 @@ export default function Contact() {
     const body = encodeURIComponent(
       `Name: ${formData.name}\nEmail: ${formData.email}\n\nMessage:\n${formData.message}`
     );
-    window.location.href = `mailto:veluriprasanth26212005@gmail.com?subject=${subject}&body=${body}`;
+    window.location.href = `mailto:prasanthveluri03@gmail.com?subject=${subject}&body=${body}`;
     setSent(true);
     setTimeout(() => setSent(false), 4000);
   };

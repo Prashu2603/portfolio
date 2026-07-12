@@ -123,7 +123,7 @@ export default function CyberIllustration() {
         <motion.div
           animate={reducedMotion ? undefined : { opacity: [0.4, 0.7, 0.4], scale: [1, 1.15, 1] }}
           transition={{ duration: 5, repeat: Infinity, ease: 'easeInOut' }}
-          className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[60%] aspect-square rounded-full bg-cyber-500/15 blur-[80px]"
+          className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[75%] aspect-square rounded-full bg-cyan-400/20 blur-[120px]"
           style={{ transform: 'translateZ(-100px)' }}
         />
 
@@ -185,60 +185,51 @@ export default function CyberIllustration() {
           }}
         />
 
-        {/* Central shield core */}
-        <motion.div
-          animate={reducedMotion ? undefined : { scale: [1, 1.04, 1] }}
-          transition={{ duration: 3, repeat: Infinity, ease: 'easeInOut' }}
-          className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2"
-          style={{ transform: 'translateZ(50px)' }}
-        >
-          <div className="relative w-36 h-36 md:w-44 md:h-44 rounded-[2rem] glass-strong flex items-center justify-center neon-border">
-            {/* Scan line */}
-            <div className="absolute inset-0 rounded-[2rem] overflow-hidden">
-              <motion.div
-                animate={reducedMotion ? undefined : { y: ['-100%', '250%'] }}
-                transition={{ duration: 3.5, repeat: Infinity, ease: 'easeInOut' }}
-                className="absolute inset-x-0 h-1/2 bg-gradient-to-b from-transparent via-cyber-400/15 to-transparent"
-              />
-            </div>
+       {/* Profile Photo */}
+<motion.div
+  animate={reducedMotion ? undefined : { scale: [1, 1.03, 1] }}
+  transition={{ duration: 4, repeat: Infinity }}
+  className="absolute top-[6%] left-[20%] "
+>
+  <div className="relative w-[340px] h-[340px] md:w-[420px] md:h-[420px] flex items-center justify-center">
 
-            {/* Corner brackets */}
-            <div className="absolute top-2 left-2 w-4 h-4 border-t border-l border-cyber-400/50 rounded-tl-lg" />
-            <div className="absolute top-2 right-2 w-4 h-4 border-t border-r border-cyber-400/50 rounded-tr-lg" />
-            <div className="absolute bottom-2 left-2 w-4 h-4 border-b border-l border-cyber-400/50 rounded-bl-lg" />
-            <div className="absolute bottom-2 right-2 w-4 h-4 border-b border-r border-cyber-400/50 rounded-br-lg" />
+    {/* Outer Glow */}
+    <div className="absolute inset-0 rounded-full bg-cyan-500/20 blur-[80px]" />
 
-            {/* Shield icon with pulse */}
-            <div className="relative">
-              <motion.div
-                animate={reducedMotion ? undefined : { scale: [1, 1.08, 1] }}
-                transition={{ duration: 2.5, repeat: Infinity, ease: 'easeInOut' }}
-              >
-                <Shield className="w-16 h-16 md:w-20 md:h-20 text-cyber-400" strokeWidth={1.5} />
-              </motion.div>
-              <div className="absolute inset-0 blur-2xl bg-cyber-500/40 -z-10" />
-            </div>
+    {/* Animated Ring */}
+    <motion.div
+      animate={{ rotate: 360 }}
+      transition={{
+        duration: 20,
+        repeat: Infinity,
+        ease: "linear",
+      }}
+      className="absolute inset-0 rounded-full border-4 border-cyan-400/40"
+    />
 
-            {/* Binary overlays */}
-            <div className="absolute top-3 left-4 font-mono text-[8px] text-cyber-400/40 leading-tight">
-              {binaryStrings[0]}<br />{binaryStrings[1]}
-            </div>
-            <div className="absolute bottom-3 right-4 font-mono text-[8px] text-cyber-400/40 leading-tight">
-              {binaryStrings[2]}<br />{binaryStrings[3]}
-            </div>
+    {/* Second Ring */}
+    <div className="absolute inset-4 rounded-full border border-cyan-400/20" />
 
-            {/* Fingerprint icon bottom */}
-            <div className="absolute -bottom-3 left-1/2 -translate-x-1/2 w-7 h-7 rounded-full glass-strong flex items-center justify-center">
-              <Fingerprint className="w-3.5 h-3.5 text-cyber-400" />
-            </div>
-          </div>
-        </motion.div>
+    {/* Image */}
+    <div className="relative w-[280px] h-[280px] md:w-[320px] md:h-[320px] rounded-full overflow-hidden border-4 border-cyan-400 shadow-[0_0_60px_rgba(34,211,238,0.45)] bg-slate-900">
+
+      <img
+        src="/Pic.png"
+        alt="Prasanth Veluri"
+        className="w-full h-full object-cover object-top"
+      />
+
+    </div>
+
+  </div>
+</motion.div>
+       
 
         {/* Radar sweep */}
         <motion.div
           animate={reducedMotion ? undefined : { rotate: 360 }}
           transition={{ duration: 6, repeat: Infinity, ease: 'linear' }}
-          className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[72%] aspect-square rounded-full"
+          className="absolute top-1/2 left-[64%] -translate-x-1/2 -translate-y-1/2 w-[72%] aspect-square rounded-full"
           style={{ transform: 'translateZ(20px)' }}
         >
           <div

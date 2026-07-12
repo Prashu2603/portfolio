@@ -19,31 +19,43 @@ const bentoCards = [
     icon: GraduationCap,
     span: 'md:col-span-2 md:row-span-2',
     content: [
-      { label: 'Degree', value: 'B.Tech Information Technology' },
-      { label: 'Institution', value: 'NBKR Institute of Science and Technology' },
-      { label: 'Graduation', value: '2027' },
-      { label: 'CGPA', value: '8.0' },
-    ],
+  { label: 'Degree', value: 'B.Tech Information Technology' },
+  { label: 'College', value: 'NBKR Institute of Science and Technology' },
+  { label: 'Graduation', value: '2027' },
+  { label: 'Status', value: 'Final Year Student' },
+],
     accent: 'cyber',
   },
   {
     title: 'Experience',
     icon: Briefcase,
     span: 'md:col-span-2',
-    content: [
-      { label: 'Current', value: 'AI & ML Intern @ AENEXZ TECH' },
-      { label: 'Previous', value: 'Cyber Security Intern @ Supraja Technologies' },
-    ],
+   content: [
+  {
+    label: 'Current Internship',
+    value: 'AI & ML Intern • AENEXZ TECH Pvt. Ltd.',
+  },
+  {
+    label: 'Previous Internship',
+    value: 'Cyber Security Intern • Supraja Technologies',
+  },
+],
     accent: 'blue',
   },
   {
     title: 'Leadership',
     icon: Users,
     span: 'md:col-span-2',
-    content: [
-      { label: 'Role', value: 'Finance Team Lead' },
-      { label: 'Organization', value: 'IEEE SB NBKRIST' },
-    ],
+   content: [
+  {
+    label: 'Position',
+    value: 'Finance Lead',
+  },
+  {
+    label: 'Organization',
+    value: 'IEEE Student Branch NBKRIST',
+  },
+],
     accent: 'green',
   },
   {
@@ -51,11 +63,12 @@ const bentoCards = [
     icon: Target,
     span: 'md:col-span-2',
     content: [
-      {
-        label: 'Mission',
-        value: 'Become a SOC Analyst specializing in threat detection, SIEM, and incident response.',
-      },
-    ],
+  {
+    label: 'Career Vision',
+    value:
+      'To become a SOC Analyst specializing in SIEM, Splunk, Threat Detection, Incident Response, and Security Monitoring.',
+  },
+],
     accent: 'purple',
   },
   {
@@ -63,21 +76,29 @@ const bentoCards = [
     icon: BookOpen,
     span: 'md:col-span-4',
     content: [
-      { label: 'Now', value: 'AI & Machine Learning' },
-      { label: 'Next', value: 'Splunk SIEM · Cloud Security · Advanced Threat Detection' },
-    ],
+  {
+    label: 'Currently Learning',
+    value: 'Artificial Intelligence & Machine Learning',
+  },
+  {
+    label: 'Upcoming Focus',
+    value:
+      'Splunk Enterprise • SIEM • SOC Operations • Cloud Security',
+  },
+],
     accent: 'cyber',
   },
   {
     title: 'Interests',
     icon: Heart,
     span: 'md:col-span-4',
-    content: [
-      {
-        label: 'Focus Areas',
-        value: 'SOC Operations · SIEM · Splunk · Cloud Security · Threat Detection · Incident Response · Linux · Networking',
-      },
-    ],
+   content: [
+  {
+    label: 'Core Interests',
+    value:
+      'Cyber Security • SOC Operations • Splunk • SIEM • Threat Hunting • Incident Response • Linux • Networking • AI Security',
+  },
+],
     accent: 'pink',
   },
 ];
@@ -128,14 +149,33 @@ export default function About() {
       <div className="max-w-7xl mx-auto">
         <SectionHeading
           label="About"
-          title={
-            <>
-              The <span className="gradient-text">Mission</span>
-            </>
-          }
-          subtitle="A snapshot of who I am, where I've been, and where I'm headed."
+  title={
+  <>
+    Who <span className="gradient-text">I Am</span>
+  </>
+}
+subtitle="Cyber Security enthusiast passionate about SOC Operations, Splunk, AI & Machine Learning, and building secure digital systems."
           icon={<Shield className="w-3.5 h-3.5 text-cyber-400" />}
         />
+       <motion.p
+  initial={{ opacity: 0, y: 20 }}
+  whileInView={{ opacity: 1, y: 0 }}
+  viewport={{ once: true }}
+  transition={{ duration: 0.6 }}
+  className="max-w-4xl mx-auto mb-12 text-center text-lg leading-8 text-slate-300"
+>
+  I'm <span className="text-cyan-400 font-semibold">Prasanth Veluri</span>, a
+  final-year B.Tech Information Technology student with a strong passion for
+  <span className="text-cyan-400"> Cyber Security</span>,
+  <span className="text-cyan-400"> SOC Operations</span>,
+  <span className="text-cyan-400"> Splunk</span>, and
+  <span className="text-cyan-400"> AI & Machine Learning</span>.
+  I enjoy solving real-world security challenges, continuously learning modern
+  technologies, and building practical skills through internships and hands-on
+  experience. My goal is to begin my career as a
+  <span className="text-cyan-400 font-semibold"> SOC Analyst</span> and
+  contribute to protecting organizations against evolving cyber threats.
+</motion.p>
 
         {/* Bento Grid */}
         <div className="grid grid-cols-1 md:grid-cols-4 gap-4 auto-rows-[minmax(180px,auto)]">

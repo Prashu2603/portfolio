@@ -19,9 +19,11 @@ interface Certification {
   color: string;
   bgColor: string;
   borderColor: string;
+  link: string;
 }
 
-const certifications: Certification[] = [
+
+    const certifications: Certification[] = [
   {
     title: 'Introduction to Cybersecurity',
     issuer: 'Cisco',
@@ -29,14 +31,7 @@ const certifications: Certification[] = [
     color: 'text-cyber-400',
     bgColor: 'bg-cyber-500/10',
     borderColor: 'border-cyber-500/25',
-  },
-  {
-    title: 'Cyber Threat Analysis & Risk Management',
-    issuer: 'Professional Certification',
-    icon: Search,
-    color: 'text-neon-purple',
-    bgColor: 'bg-neon-purple/10',
-    borderColor: 'border-neon-purple/25',
+    link: '/certificates/cisco.pdf',
   },
   {
     title: 'Privacy and Security on Online Social Media',
@@ -45,6 +40,7 @@ const certifications: Certification[] = [
     color: 'text-blue-400',
     bgColor: 'bg-blue-500/10',
     borderColor: 'border-blue-500/25',
+    link: '/certificates/Nptel.pdf',
   },
   {
     title: 'Cyber Security Internship Certification',
@@ -53,6 +49,16 @@ const certifications: Certification[] = [
     color: 'text-neon-green',
     bgColor: 'bg-neon-green/10',
     borderColor: 'border-neon-green/25',
+    link: '/certificates/Intership.pdf',
+  },
+  {
+    title: 'IEEE Student Member & Finance lead',
+    issuer: 'IEEE SB NBKRIST . 2023-2026',
+    icon: Award,
+    color: 'text-neon-purple',
+    bgColor: 'bg-neon-purple/10',
+    borderColor: 'border-neon-purple/25',
+    link: '/certificates/PRASANTH VELURI.pdf',
   },
 ];
 
@@ -73,7 +79,10 @@ export default function Certifications() {
 
         <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
           {certifications.map((cert, index) => (
-            <motion.div
+            <motion.a
+              href={cert.link}
+              target="_blank"
+              rel="noopener noreferrer"
               key={cert.title}
               initial={{ opacity: 0, y: 30, rotateX: -10 }}
               whileInView={{ opacity: 1, y: 0, rotateX: 0 }}
@@ -117,7 +126,7 @@ export default function Certifications() {
 
                 <ExternalLink className="w-4 h-4 text-dark-600 group-hover:text-cyber-400 transition-colors flex-shrink-0" />
               </div>
-            </motion.div>
+            </motion.a>
           ))}
         </div>
       </div>
