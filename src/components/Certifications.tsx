@@ -20,6 +20,8 @@ interface Certification {
   bgColor: string;
   borderColor: string;
   link: string;
+  credentialId?: string;
+  earnedOn?: string;
 }
 
 
@@ -32,6 +34,17 @@ interface Certification {
     bgColor: 'bg-cyber-500/10',
     borderColor: 'border-cyber-500/25',
     link: '/certificates/cisco.pdf',
+  },
+  {
+    title: 'Get Started with Cloud Security and Monitoring Tasks',
+    issuer: 'Microsoft Applied Skills',
+    icon: Shield,
+    color: 'text-blue-400',
+    bgColor: 'bg-blue-500/10',
+    borderColor: 'border-blue-500/25',
+    link: 'https://learn.microsoft.com/api/credentials/share/en-us/PrasanthVeluri-3985/EBAE56196FDBAC58?sharingId=DFA2194549EFC179',
+    credentialId: 'EBAE56196FDBAC58',
+    earnedOn: 'July 17, 2026',
   },
   {
     title: 'Privacy and Security on Online Social Media',
@@ -122,6 +135,12 @@ export default function Certifications() {
                     <GraduationCap className="w-3.5 h-3.5" />
                     <span>{cert.issuer}</span>
                   </div>
+                  {(cert.earnedOn || cert.credentialId) && (
+                    <div className="mt-2 space-y-0.5 font-mono text-[10px] text-dark-500">
+                      {cert.earnedOn && <div>Earned: {cert.earnedOn}</div>}
+                      {cert.credentialId && <div>Credential ID: {cert.credentialId}</div>}
+                    </div>
+                  )}
                 </div>
 
                 <ExternalLink className="w-4 h-4 text-dark-600 group-hover:text-cyber-400 transition-colors flex-shrink-0" />
