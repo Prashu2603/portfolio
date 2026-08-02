@@ -49,8 +49,9 @@ export default function Navbar() {
         initial={{ y: -100, opacity: 0 }}
         animate={{ y: 0, opacity: 1 }}
         transition={{ duration: 0.6, delay: 0.3, ease: [0.25, 0.1, 0.25, 1] }}
+        style={{ x: '-50%' }}
         aria-label="Main navigation"
-        className={`fixed top-4 left-1/2 -translate-x-1/2 z-50 transition-all duration-500 ${
+        className={`fixed top-4 left-1/2 z-50 transition-all duration-500 ${
           scrolled ? 'w-[94%] max-w-5xl' : 'w-[96%] max-w-6xl'
         }`}
       >
@@ -132,7 +133,8 @@ export default function Navbar() {
             animate={{ opacity: 1, y: 0 }}
             exit={{ opacity: 0, y: -20 }}
             transition={{ duration: 0.25 }}
-            className="fixed top-20 left-1/2 -translate-x-1/2 z-50 w-[90%] max-w-sm md:hidden"
+            style={{ x: '-50%' }}
+            className="fixed top-20 left-1/2 z-50 w-[90%] max-w-sm md:hidden"
           >
             <div className="glass-strong backdrop-blur-2xl rounded-2xl border border-cyan-500/20 p-4 neon-border shadow-glass-lg">
               {navItems.map((item, i) => {
