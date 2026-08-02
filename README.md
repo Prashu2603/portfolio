@@ -1,161 +1,111 @@
-<p align="center">
-  <img src="./preview.png" alt="Portfolio Preview" width="100%">
-</p>
+# Veluri Prasanth — Cyber Security Portfolio
 
-<h1 align="center">🛡️ Veluri Prasanth | Cyber Security Portfolio</h1>
+[![Live Portfolio](https://img.shields.io/badge/Live_Portfolio-Visit-22d3ee?style=for-the-badge&logo=vercel&logoColor=white)](https://veluri-prasanth.vercel.app)
+[![GitHub](https://img.shields.io/badge/GitHub-Prashu2603-181717?style=for-the-badge&logo=github)](https://github.com/Prashu2603)
+[![LinkedIn](https://img.shields.io/badge/LinkedIn-Prasanth_Veluri-0A66C2?style=for-the-badge&logo=linkedin)](https://linkedin.com/in/prasanth-veluri)
 
-<p align="center">
-  <b>Cyber Security Enthusiast • SOC Analyst Aspirant • Splunk & SIEM Learner • AI & ML Student</b>
-</p>
+![Portfolio preview](./preview.png)
 
-<p align="center">
-  <a href="https://github.com/Prashu2603">
-    <img src="https://img.shields.io/badge/GitHub-Prashu2603-181717?style=for-the-badge&logo=github">
-  </a>
+## Live portfolio
 
-  <a href="https://linkedin.com/in/prasanth-veluri">
-    <img src="https://img.shields.io/badge/LinkedIn-Prasanth%20Veluri-0A66C2?style=for-the-badge&logo=linkedin">
-  </a>
+**[veluri-prasanth.vercel.app](https://veluri-prasanth.vercel.app)**
 
-  <img src="https://img.shields.io/badge/React-19-blue?style=for-the-badge&logo=react">
+## About
 
-  <img src="https://img.shields.io/badge/TypeScript-5-blue?style=for-the-badge&logo=typescript">
+This is my personal cyber security portfolio. It presents my education, technical skills, internships, leadership experience, certifications, planned security projects, resume, and contact information.
 
-  <img src="https://img.shields.io/badge/Vite-6-purple?style=for-the-badge&logo=vite">
+I am a final-year B.Tech Information Technology student focused on SOC operations, SIEM, Splunk, threat detection, incident response, cloud security, and AI/ML.
 
-  <img src="https://img.shields.io/badge/TailwindCSS-4-38BDF8?style=for-the-badge&logo=tailwindcss">
-</p>
+## Highlights
 
----
+- Responsive cyber-security themed interface
+- Animated full-screen hero and custom cyber illustration
+- Education, experience, skills, and leadership sections
+- Verified certificate links, including Microsoft Applied Skills
+- Downloadable current resume
+- Contact form that sends enquiries directly to email
+- Keyboard focus styles and reduced-motion support
+- Open Graph and Twitter social preview metadata
+- Automated Vercel deployments from GitHub
 
-# 👋 About Me
+## Certifications
 
-Hi, I'm **Veluri Prasanth**, a Final-Year **B.Tech Information Technology** student graduating in **2027**.
+- Microsoft Applied Skills — Get Started with Cloud Security and Monitoring Tasks
+- Cisco — Introduction to Cybersecurity
+- NPTEL — Privacy and Security on Online Social Media
+- Supraja Technologies — Cyber Security Internship Certification
+- IEEE Student Member and Finance Lead
 
-I'm passionate about building a career in **Cyber Security** with a strong focus on:
+Microsoft credential: [Verify online](https://learn.microsoft.com/api/credentials/share/en-us/PrasanthVeluri-3985/EBAE56196FDBAC58?sharingId=DFA2194549EFC179)
 
-- 🔐 SOC Operations
-- 📊 SIEM
-- 💙 Splunk Enterprise
-- 🚨 Threat Detection
-- 🛡️ Incident Response
-- ☁️ Cloud Security
-- 🤖 AI & Machine Learning
+## Technology stack
 
-Currently seeking **Cyber Security Internship Opportunities** to gain practical experience and contribute to real-world security projects.
+- React 18
+- TypeScript 5
+- Vite 5
+- Tailwind CSS 3
+- Framer Motion
+- Lucide React
+- FormSubmit AJAX
+- Vercel
 
----
+## Run locally
 
-# 🚀 Live Portfolio
+Requirements: Node.js 18 or newer and npm.
 
-> Coming Soon...
+```bash
+git clone https://github.com/Prashu2603/portfolio.git
+cd portfolio
+npm install
+npm run dev
+```
 
----
+Open the local URL displayed by Vite.
 
-# ✨ Features
+## Production build
 
-- 🎨 Modern Cyber Security UI
-- ⚡ Framer Motion Animations
-- 📱 Fully Responsive Design
-- 👨 Professional Hero Section
-- 🙋 About Me Section
-- 💻 Skills Section
-- 📂 Projects Showcase
-- 📜 Certifications
-- 📄 Resume Download
-- 📬 Contact Section
-- 🌙 Dark Cyber Theme
+```bash
+npm run build
+npm run preview
+```
 
----
+The optimized build is generated in `dist/`.
 
-# 🛠️ Tech Stack
-
-| Frontend | Styling | Animation | Icons |
-|----------|----------|-----------|-------|
-| React | Tailwind CSS | Framer Motion | Lucide React |
-| TypeScript | CSS | Motion Effects | SVG Icons |
-| Vite | Responsive UI | Interactive Components | Modern UI |
-
----
-
-# 📂 Project Structure
+## Project structure
 
 ```text
 portfolio/
-│
 ├── public/
-│   ├── Pic.png
 │   ├── certificates/
-│   └── resume/
-│
+│   ├── resume/
+│   ├── Pic.png
+│   ├── favicon.svg
+│   └── portfolio-preview.png
 ├── src/
 │   ├── components/
 │   ├── hooks/
-│   ├── assets/
-│   └── App.tsx
-│
-├── preview.png
-├── README.md
+│   ├── App.tsx
+│   ├── index.css
+│   └── main.tsx
+├── index.html
 ├── package.json
+├── tailwind.config.js
 └── vite.config.ts
 ```
 
----
+## Contact form activation
 
-# 📜 Certifications
+The contact form uses FormSubmit to deliver messages directly to `prasanthveluri03@gmail.com`. On the first live submission, FormSubmit sends an activation email. The form owner must open that email and confirm the endpoint once; later messages are delivered automatically.
 
-- Cisco – Introduction to Cybersecurity
-- NPTEL – Privacy and Security on Online Social Media
-- Cyber Security Internship Certificate
+## Contact
 
----
+- Email: [prasanthveluri03@gmail.com](mailto:prasanthveluri03@gmail.com)
+- LinkedIn: [linkedin.com/in/prasanth-veluri](https://linkedin.com/in/prasanth-veluri)
+- GitHub: [github.com/Prashu2603](https://github.com/Prashu2603)
+- Location: Nellore, Andhra Pradesh, India
 
-# 🎯 Career Goal
+## License
 
-My goal is to become a **SOC Analyst** specializing in:
+This repository contains personal portfolio content and assets. Please do not reuse personal information, photographs, resume, or certificates without permission.
 
-- Security Monitoring
-- SIEM
-- Splunk
-- Threat Detection
-- Incident Response
-- Digital Forensics
-- Security Automation
-
----
-
-# 📫 Contact
-
-**👤 Veluri Prasanth**
-
-📍 Nellore, Andhra Pradesh, India
-
-📧 Email: **prasanthveluri03@gmail.com**
-
-💼 LinkedIn
-
-https://linkedin.com/in/prasanth-veluri
-
-💻 GitHub
-
-https://github.com/Prashu2603
-
----
-
-# ⭐ Support
-
-If you like this project, please give this repository a ⭐ on GitHub.
-
-It motivates me to build more projects.
-
----
-
-## 📄 License
-
-This project is created for educational and portfolio purposes.
-
----
-
-<p align="center">
-Made with ❤️ by <b>Veluri Prasanth</b>
-</p>
+© 2026 Veluri Prasanth

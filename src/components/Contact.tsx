@@ -10,6 +10,8 @@ import {
   User,
   MessageSquare,
   CheckCircle2,
+  AlertCircle,
+  Loader2,
   Shield,
 } from 'lucide-react';
 import SectionHeading from './SectionHeading';
@@ -53,18 +55,35 @@ const socials = [
 
 export default function Contact() {
   const [formData, setFormData] = useState({ name: '', email: '', message: '' });
-  const [sent, setSent] = useState(false);
+  const [submitStatus, setSubmitStatus] = useState<'idle' | 'sending' | 'success' | 'error'>('idle');
   const submitMagnetic = useMagnetic<HTMLButtonElement>(0.15);
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    const subject = encodeURIComponent(`Portfolio Contact from ${formData.name}`);
-    const body = encodeURIComponent(
-      `Name: ${formData.name}\nEmail: ${formData.email}\n\nMessage:\n${formData.message}`
-    );
-    window.location.href = `mailto:prasanthveluri03@gmail.com?subject=${subject}&body=${body}`;
-    setSent(true);
-    setTimeout(() => setSent(false), 4000);
+    setSubmitStatus('sending');
+
+    try {
+      const response = await fetch('https://formsubmit.co/ajax/prasanthveluri03@gmail.com', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+          Accept: 'application/json',
+        },
+        body: JSON.stringify({
+          ...formData,
+          _subject: `New portfolio message from ${formData.name}`,
+          _template: 'table',
+          _honey: '',
+        }),
+      });
+
+      if (!response.ok) throw new Error('Message submission failed');
+
+      setFormData({ name: '', email: '', message: '' });
+      setSubmitStatus('success');
+    } catch {
+      setSubmitStatus('error');
+    }
   };
 
   return (
@@ -191,13 +210,15 @@ export default function Contact() {
 
                 {/* Name */}
                 <div className="space-y-1.5">
-                  <label className="font-mono text-[10px] uppercase tracking-wider text-dark-500">
+                  <label htmlFor="contact-name" className="font-mono text-[10px] uppercase tracking-wider text-dark-500">
                     Your Name
                   </label>
                   <div className="relative">
                     <User className="absolute left-3 top-1/2 -translate-y-1/2 w-4 h-4 text-dark-600" />
                     <input
                       type="text"
+                      id="contact-name"
+                      name="name"
                       required
                       value={formData.name}
                       onChange={(e) => setFormData({ ...formData, name: e.target.value })}
@@ -209,13 +230,15 @@ export default function Contact() {
 
                 {/* Email */}
                 <div className="space-y-1.5">
-                  <label className="font-mono text-[10px] uppercase tracking-wider text-dark-500">
+                  <label htmlFor="contact-email" className="font-mono text-[10px] uppercase tracking-wider text-dark-500">
                     Your Email
                   </label>
                   <div className="relative">
                     <Mail className="absolute left-3 top-1/2 -translate-y-1/2 w-4 h-4 text-dark-600" />
                     <input
                       type="email"
+                      id="contact-email"
+                      name="email"
                       required
                       value={formData.email}
                       onChange={(e) => setFormData({ ...formData, email: e.target.value })}
@@ -227,12 +250,14 @@ export default function Contact() {
 
                 {/* Message */}
                 <div className="space-y-1.5">
-                  <label className="font-mono text-[10px] uppercase tracking-wider text-dark-500">
+                  <label htmlFor="contact-message" className="font-mono text-[10px] uppercase tracking-wider text-dark-500">
                     Message
                   </label>
                   <div className="relative">
                     <MessageSquare className="absolute left-3 top-3.5 w-4 h-4 text-dark-600" />
                     <textarea
+                      id="contact-message"
+                      name="message"
                       required
                       rows={5}
                       value={formData.message}
@@ -249,15 +274,16 @@ export default function Contact() {
                   onMouseMove={submitMagnetic.handleMouseMove}
                   onMouseLeave={submitMagnetic.handleMouseLeave}
                   type="submit"
+                  disabled={submitStatus === 'sending'}
                   whileHover={{ scale: 1.01 }}
                   whileTap={{ scale: 0.97 }}
                   style={{ transition: 'transform 0.25s cubic-bezier(0.34, 1.56, 0.64, 1)' }}
-                  className="w-full flex items-center justify-center gap-2 px-6 py-3.5 rounded-xl bg-gradient-to-r from-cyber-500 to-blue-500 text-white font-semibold hover:shadow-[0_0_30px_rgba(34,211,238,0.3)] transition-shadow"
+                  className="w-full flex items-center justify-center gap-2 px-6 py-3.5 rounded-xl bg-gradient-to-r from-cyber-500 to-blue-500 text-white font-semibold hover:shadow-[0_0_30px_rgba(34,211,238,0.3)] transition-shadow disabled:cursor-not-allowed disabled:opacity-70"
                 >
-                  {sent ? (
+                  {submitStatus === 'sending' ? (
                     <>
-                      <CheckCircle2 className="w-5 h-5" />
-                      Message Ready — Opening Email
+                      <Loader2 className="w-5 h-5 animate-spin" />
+                      Sending Message...
                     </>
                   ) : (
                     <>
@@ -267,9 +293,23 @@ export default function Contact() {
                   )}
                 </motion.button>
 
-                <p className="text-center text-xs text-dark-600 font-mono">
-                  Your message will open in your default email client
-                </p>
+                <div aria-live="polite" className="min-h-5 text-center text-xs font-mono">
+                  {submitStatus === 'success' && (
+                    <p className="inline-flex items-center gap-1.5 text-neon-green">
+                      <CheckCircle2 className="w-3.5 h-3.5" />
+                      Message sent successfully. I'll get back to you soon.
+                    </p>
+                  )}
+                  {submitStatus === 'error' && (
+                    <p className="inline-flex items-center gap-1.5 text-red-400">
+                      <AlertCircle className="w-3.5 h-3.5" />
+                      Message could not be sent. Please try again or email me directly.
+                    </p>
+                  )}
+                  {submitStatus === 'idle' && (
+                    <p className="text-dark-600">Your message will be delivered directly to my inbox.</p>
+                  )}
+                </div>
               </div>
             </form>
           </motion.div>
