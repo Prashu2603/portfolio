@@ -53,6 +53,20 @@
       scroll-behavior: auto !important;
     }
   }
+
+  @media (max-width: 767px) {
+    :root {
+      --grid-animation: none;
+    }
+
+    .glass,
+    .glass-strong,
+    .glass-card,
+    .glass-card-hover {
+      -webkit-backdrop-filter: none;
+      backdrop-filter: none;
+    }
+  }
 }
 
 @layer components {
