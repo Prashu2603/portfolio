@@ -156,6 +156,7 @@ export default function Contact() {
                     href={social.href}
                     target="_blank"
                     rel="noopener noreferrer"
+                    aria-label={social.label}
                     whileHover={{ scale: 1.1, y: -3 }}
                     whileTap={{ scale: 0.95 }}
                     initial={{ opacity: 0, scale: 0.8 }}
@@ -164,7 +165,7 @@ export default function Contact() {
                     transition={{ delay: 0.5 + i * 0.1 }}
                     className={`w-11 h-11 rounded-xl glass flex items-center justify-center text-dark-300 ${social.color} transition-colors`}
                   >
-                    <social.icon className="w-5 h-5" />
+                    <social.icon className="w-5 h-5" aria-hidden="true" />
                   </motion.a>
                 ))}
               </div>
