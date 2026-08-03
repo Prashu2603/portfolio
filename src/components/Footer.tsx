@@ -87,11 +87,12 @@ export default function Footer() {
                 href={social.href}
                 target="_blank"
                 rel="noopener noreferrer"
+                aria-label={social.label}
                 whileHover={{ scale: 1.1, y: -2 }}
                 whileTap={{ scale: 0.95 }}
                 className="w-9 h-9 rounded-lg glass flex items-center justify-center text-dark-400 hover:text-cyber-300 transition-colors"
               >
-                <social.icon className="w-4 h-4" />
+                <social.icon className="w-4 h-4" aria-hidden="true" />
               </motion.a>
             ))}
           </motion.div>
