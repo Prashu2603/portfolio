@@ -151,7 +151,7 @@ export default function About() {
           label="About"
   title={
   <>
-    Who <span className="gradient-text">I Am</span>
+    My Journey in <span className="gradient-text">Cyber Security</span>
   </>
 }
 subtitle="Cyber Security enthusiast passionate about SOC Operations, Splunk, AI & Machine Learning, and building secure digital systems."
