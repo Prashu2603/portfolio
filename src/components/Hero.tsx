@@ -62,7 +62,7 @@ export default function Hero() {
     <section
       id="home"
       aria-label="Hero"
-      className="relative min-h-screen flex items-center justify-center section-padding pt-28 pb-14 md:pt-28 md:pb-16"
+      className="relative min-h-[100svh] flex items-center justify-center section-padding pt-24 pb-10 md:pt-28 md:pb-16"
     >
       <div className="max-w-7xl mx-auto w-full grid lg:grid-cols-2 gap-8 lg:gap-12 items-center">
         {/* Left: Text */}
@@ -70,7 +70,7 @@ export default function Hero() {
           initial={{ opacity: 0, x: -40 }}
           animate={{ opacity: 1, x: 0 }}
           transition={{ duration: 0.7, delay: 0.2, ease: easeOut }}
-          className="flex flex-col gap-5 md:gap-5 order-2 lg:order-1"
+          className="flex flex-col gap-4 md:gap-5 order-1"
         >
           {/* Status badge */}
           <motion.div
@@ -94,7 +94,7 @@ export default function Hero() {
   initial={{ opacity: 0, y: 24 }}
   animate={{ opacity: 1, y: 0 }}
   transition={{ duration: 0.7, delay: 0.5, ease: easeOut }}
-  className="font-display font-black text-5xl sm:text-6xl md:text-7xl lg:text-7xl xl:text-8xl leading-[1.05]"
+  className="font-display font-black text-4xl min-[380px]:text-5xl sm:text-6xl md:text-7xl lg:text-7xl xl:text-8xl leading-[1.05]"
 >
   <span className="bg-gradient-to-r from-cyan-300 via-cyan-400 to-blue-500 bg-clip-text text-transparent drop-shadow-[0_0_45px_rgba(34,211,238,0.9)]">
     Prasanth Veluri
@@ -208,7 +208,7 @@ export default function Hero() {
           initial={{ opacity: 0, scale: 0.85 }}
           animate={{ opacity: 1, scale: 1 }}
           transition={{ duration: 0.9, delay: 0.3, ease: easeOut }}
-         className="relative h-[360px] sm:h-[430px] md:h-[500px] lg:h-[540px] xl:h-[590px] order-1 lg:order-2"
+         className="hidden lg:block relative lg:h-[540px] xl:h-[590px] order-2"
         >
           <CyberIllustration />
         </motion.div>
@@ -219,7 +219,7 @@ export default function Hero() {
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
         transition={{ delay: 1.8 }}
-        className="absolute bottom-6 md:bottom-8 left-1/2 -translate-x-1/2 flex flex-col items-center gap-2"
+        className="hidden md:flex absolute bottom-6 md:bottom-8 left-1/2 -translate-x-1/2 flex-col items-center gap-2"
         aria-hidden="true"
       >
         <span className="font-mono text-[10px] md:text-xs text-dark-500 tracking-widest">EXPLORE</span>

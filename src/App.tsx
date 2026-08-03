@@ -13,7 +13,16 @@ import Contact from './components/Contact';
 import Footer from './components/Footer';
 
 export default function App() {
-  const [loading, setLoading] = useState(true);
+  const [loading, setLoading] = useState(() => {
+    const isMobile = window.matchMedia('(max-width: 767px)').matches;
+    const hasLoaded = sessionStorage.getItem('portfolio-loaded') === 'true';
+    return !isMobile && !hasLoaded;
+  });
+
+  const completeLoading = () => {
+    sessionStorage.setItem('portfolio-loaded', 'true');
+    setLoading(false);
+  };
 
   useEffect(() => {
     if (loading) {
@@ -26,7 +35,7 @@ export default function App() {
   return (
     <>
       <AnimatePresence>
-        {loading && <LoadingScreen onComplete={() => setLoading(false)} />}
+        {loading && <LoadingScreen onComplete={completeLoading} />}
       </AnimatePresence>
 
       <Background />
