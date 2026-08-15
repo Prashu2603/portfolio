@@ -189,9 +189,9 @@ export default function CyberIllustration() {
 <motion.div
   animate={reducedMotion ? undefined : { scale: [1, 1.03, 1] }}
   transition={{ duration: 4, repeat: Infinity }}
-  className="absolute top-[6%] left-[20%] "
+  className="absolute top-[10%] left-1/2 -ml-[130px] sm:-ml-[170px] md:-ml-[210px] lg:top-[6%] lg:left-[20%] lg:ml-0"
 >
-  <div className="relative w-[340px] h-[340px] md:w-[420px] md:h-[420px] flex items-center justify-center">
+  <div className="relative w-[260px] h-[260px] sm:w-[340px] sm:h-[340px] md:w-[420px] md:h-[420px] flex items-center justify-center">
 
     {/* Outer Glow */}
     <div className="absolute inset-0 rounded-full bg-cyan-500/20 blur-[80px]" />
@@ -211,11 +211,16 @@ export default function CyberIllustration() {
     <div className="absolute inset-4 rounded-full border border-cyan-400/20" />
 
     {/* Image */}
-    <div className="relative w-[280px] h-[280px] md:w-[320px] md:h-[320px] rounded-full overflow-hidden border-4 border-cyan-400 shadow-[0_0_60px_rgba(34,211,238,0.45)] bg-slate-900">
+    <div className="relative w-[210px] h-[210px] sm:w-[280px] sm:h-[280px] md:w-[320px] md:h-[320px] rounded-full overflow-hidden border-4 border-cyan-400 shadow-[0_0_60px_rgba(34,211,238,0.45)] bg-slate-900">
 
       <img
         src="/Pic.png"
         alt="Prasanth Veluri"
+        width="320"
+        height="320"
+        loading="eager"
+        fetchPriority="high"
+        decoding="async"
         className="w-full h-full object-cover object-top"
       />
 
