@@ -165,7 +165,7 @@ export default function Hero() {
   </MagneticButton>
 
   <a
-    href="/resume/Veluri_Prasanth_Resume.pdf"
+    href="/resume/Prasanth_Veluri_Resume.pdf"
     target="_blank"
     rel="noopener noreferrer"
     className="px-7 py-3.5 rounded-xl glass text-cyan-300 font-semibold border border-cyan-500/20 hover:bg-white/10 transition-all"
