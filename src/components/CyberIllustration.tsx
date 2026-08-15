@@ -216,6 +216,11 @@ export default function CyberIllustration() {
       <img
         src="/Pic.png"
         alt="Prasanth Veluri"
+        width="320"
+        height="320"
+        loading="eager"
+        fetchPriority="high"
+        decoding="async"
         className="w-full h-full object-cover object-top"
       />
 
