@@ -88,6 +88,28 @@ export default function Hero() {
             </span>
           </motion.div>
 
+          {/* Compact profile photo for phones and tablets */}
+          <motion.div
+            initial={{ opacity: 0, scale: 0.9 }}
+            animate={{ opacity: 1, scale: 1 }}
+            transition={{ duration: 0.6, delay: 0.35, ease: easeOut }}
+            className="lg:hidden self-center relative my-2"
+          >
+            <div className="absolute inset-0 rounded-full bg-cyan-500/25 blur-2xl" aria-hidden="true" />
+            <div className="relative w-40 h-40 sm:w-48 sm:h-48 rounded-full overflow-hidden border-4 border-cyan-400 shadow-[0_0_35px_rgba(34,211,238,0.4)] bg-slate-900">
+              <img
+                src="/Pic.png"
+                alt="Prasanth Veluri"
+                width="192"
+                height="192"
+                loading="eager"
+                fetchPriority="high"
+                decoding="async"
+                className="w-full h-full object-cover object-top"
+              />
+            </div>
+          </motion.div>
+
           {/* Title with parallax */}
           <motion.div style={{ x: mouse.x * 12, y: mouse.y * 12 }}>
          <motion.h1
