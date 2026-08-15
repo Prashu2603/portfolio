@@ -99,6 +99,7 @@ export default function CyberIllustration() {
 
   const isTouchDevice = typeof window !== 'undefined' && window.matchMedia('(pointer: coarse)').matches;
   const reducedMotion = typeof window !== 'undefined' && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  const disableContinuousMotion = isTouchDevice || reducedMotion;
 
   useEffect(() => {
     if (isTouchDevice) return;
@@ -121,7 +122,7 @@ export default function CyberIllustration() {
 
         {/* Far: ambient glow */}
         <motion.div
-          animate={reducedMotion ? undefined : { opacity: [0.4, 0.7, 0.4], scale: [1, 1.15, 1] }}
+          animate={disableContinuousMotion ? undefined : { opacity: [0.4, 0.7, 0.4], scale: [1, 1.15, 1] }}
           transition={{ duration: 5, repeat: Infinity, ease: 'easeInOut' }}
           className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[75%] aspect-square rounded-full bg-cyan-400/20 blur-[120px]"
           style={{ transform: 'translateZ(-100px)' }}
@@ -129,7 +130,7 @@ export default function CyberIllustration() {
 
         {/* Outer dashed ring with orbiting nodes */}
         <motion.div
-          animate={reducedMotion ? undefined : { rotate: 360 }}
+          animate={disableContinuousMotion ? undefined : { rotate: 360 }}
           transition={{ duration: 40, repeat: Infinity, ease: 'linear' }}
           className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[92%] aspect-square rounded-full border border-cyber-500/15"
           style={{ borderStyle: 'dashed', transform: 'translateZ(-40px)' }}
@@ -149,7 +150,7 @@ export default function CyberIllustration() {
 
         {/* Middle ring — counter-rotating */}
         <motion.div
-          animate={reducedMotion ? undefined : { rotate: -360 }}
+          animate={disableContinuousMotion ? undefined : { rotate: -360 }}
           transition={{ duration: 28, repeat: Infinity, ease: 'linear' }}
           className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[72%] aspect-square rounded-full border border-blue-500/15"
           style={{ transform: 'translateZ(-20px)' }}
@@ -169,7 +170,7 @@ export default function CyberIllustration() {
 
         {/* Inner ring */}
         <motion.div
-          animate={reducedMotion ? undefined : { rotate: 360 }}
+          animate={disableContinuousMotion ? undefined : { rotate: 360 }}
           transition={{ duration: 20, repeat: Infinity, ease: 'linear' }}
           className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[52%] aspect-square rounded-full border border-neon-purple/15"
           style={{ transform: 'translateZ(0px)' }}
@@ -187,7 +188,7 @@ export default function CyberIllustration() {
 
        {/* Profile Photo */}
 <motion.div
-  animate={reducedMotion ? undefined : { scale: [1, 1.03, 1] }}
+  animate={disableContinuousMotion ? undefined : { scale: [1, 1.03, 1] }}
   transition={{ duration: 4, repeat: Infinity }}
   className="absolute top-[10%] left-1/2 -ml-[130px] sm:-ml-[170px] md:-ml-[210px] lg:top-[6%] lg:left-[20%] lg:ml-0"
 >
@@ -198,7 +199,7 @@ export default function CyberIllustration() {
 
     {/* Animated Ring */}
     <motion.div
-      animate={{ rotate: 360 }}
+      animate={disableContinuousMotion ? undefined : { rotate: 360 }}
       transition={{
         duration: 20,
         repeat: Infinity,
@@ -232,7 +233,7 @@ export default function CyberIllustration() {
 
         {/* Radar sweep */}
         <motion.div
-          animate={reducedMotion ? undefined : { rotate: 360 }}
+          animate={disableContinuousMotion ? undefined : { rotate: 360 }}
           transition={{ duration: 6, repeat: Infinity, ease: 'linear' }}
           className="absolute top-1/2 left-[64%] -translate-x-1/2 -translate-y-1/2 w-[72%] aspect-square rounded-full"
           style={{ transform: 'translateZ(20px)' }}
@@ -249,7 +250,7 @@ export default function CyberIllustration() {
         {floatCards.map((card, i) => (
           <motion.div
             key={card.label}
-            animate={reducedMotion ? undefined : { y: [0, -12, 0] }}
+            animate={disableContinuousMotion ? undefined : { y: [0, -12, 0] }}
             transition={{ duration: 4 + i * 0.5, repeat: Infinity, ease: 'easeInOut', delay: card.delay }}
             className={`absolute ${card.position}`}
             style={{ transform: `translateZ(${card.depth}px)` }}
@@ -268,7 +269,7 @@ export default function CyberIllustration() {
 
         {/* Terminal snippet — bottom center */}
         <motion.div
-          animate={reducedMotion ? undefined : { y: [0, -8, 0] }}
+          animate={disableContinuousMotion ? undefined : { y: [0, -8, 0] }}
           transition={{ duration: 5, repeat: Infinity, ease: 'easeInOut', delay: 2 }}
           className="absolute bottom-[2%] left-1/2 -translate-x-1/2"
           style={{ transform: 'translateZ(35px)' }}
@@ -284,7 +285,7 @@ export default function CyberIllustration() {
 
         {/* Radar icon — top center */}
         <motion.div
-          animate={reducedMotion ? undefined : { y: [0, -10, 0], rotate: [0, 5, 0] }}
+          animate={disableContinuousMotion ? undefined : { y: [0, -10, 0], rotate: [0, 5, 0] }}
           transition={{ duration: 4.5, repeat: Infinity, ease: 'easeInOut', delay: 0.3 }}
           className="absolute top-[2%] left-1/2 -translate-x-1/2"
           style={{ transform: 'translateZ(45px)' }}
